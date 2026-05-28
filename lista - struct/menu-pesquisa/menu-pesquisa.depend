@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1779994161 source:c:\users\aluno\desktop\atividades-estruturas-de-dados\lista - struct\menu-pesquisa\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
