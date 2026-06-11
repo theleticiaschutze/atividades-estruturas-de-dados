@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1781205627 source:c:\xampp\htdocs\atividades-estruturas-de-dados\lista - struct\menu-csv\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
