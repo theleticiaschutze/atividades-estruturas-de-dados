@@ -15,17 +15,16 @@ void firula(int i)
    if(i%4==1) printf("\\");
    if(i%4==2) printf("|");
    if(i%4==3) printf("/");
-   Sleep(500); //esse "demora" carregar
+   Sleep(100); //esse "demora" carregar
    printf("\b");
 }
 
 int lerArquivo(tAluno * vAluno)
 {
    char filename[] = "alunos.csv";  //fizemos como um string para utilizar no programa varias vezes
-   FILE * file; //pois vamos usar em varios lugares
-   qtd = 0;  //pois vou usar ela para "medir"
+   int qtd = 0;  //pois vou usar ela para "medir"
    printf("Carregando o arquivo...\n");
-   file = fopen(filename, "r");
+   FILE * file = fopen(filename, "r");
    if(file==NULL) {
       printf("Erro ao abrir o arquivo!");
       return; //pois se der erro ele der erro para abrir ele nem grava;
@@ -41,28 +40,24 @@ int lerArquivo(tAluno * vAluno)
    fclose(file);
    return qtd;
 }
-void gravarArquivo()
-{
-   char filename[] = "alunos.csv";
+void gravarArquivo(tAluno vAluno[], int qtd){
    printf("Gerando arquivo CSV...\n");
+   char filename[] = "alunos.csv";
    //criamos o *file que é um ponteiro que se der certo o csv ele retorna o ponteiro com info
-   file = fopen(filename, "w");  //o fopen abre um arquivo, o primeiro é o nome do arquivo, o segundo "" com w é de write de que vai escrever.
+   FILE *file = fopen(filename, "w");  //o fopen abre um arquivo, o primeiro é o nome do arquivo, o segundo "" com w é de write de que vai escrever.
    if(file==NULL) {
       printf("Erro ao abrir o arquivo!");
-      break; //pois se der erro ele der erro para abrir ele nem grava;
+      return; //pois se der erro ele der erro para abrir ele nem grava;
    }
-   for(i = 0; i < qtd; i++) {
-      if(strstr(vAluno[i].nome, pesq) != NULL) {
+   for(int i = 0; i < qtd; i++) {
          //fprint grava dentro do arquivo, e o file - é o ponteiro que colocamos
          fprintf(file, "%d;%s;%c;%f\n", vAluno[i].matr, vAluno[i].nome, vAluno[i].sexo, vAluno[i].alt);
          //separados por ; pois , pode ter no meio de uma string
          firula(i);
-      }
    }
    fclose(file); //fecha o arquivo! ele fica salvo na mesma pasta desse executável no pc!
    printf("Arquivo gerado com sucesso!\n");
-   break;
-
+   return;
 
 }
 int peganumero()
@@ -105,6 +100,7 @@ int main()
 
       case 0:
          printf("Saindoo...\n");
+         gravarArquivo(, qtd);
          break;
       case 1:
          printf("\n------- INCLUSAO -------\n");

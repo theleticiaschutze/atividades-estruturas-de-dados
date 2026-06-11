@@ -130,12 +130,10 @@ int main()
             break; //pois se der erro ele der erro para abrir ele nem grava;
          }
          for(i = 0; i < qtd; i++) {
-            if(strstr(vAluno[i].nome, pesq) != NULL) {
                //fprint grava dentro do arquivo, e o file - é o ponteiro que colocamos
                fprintf(file, "%d;%s;%c;%f\n", vAluno[i].matr, vAluno[i].nome, vAluno[i].sexo, vAluno[i].alt);
                //separados por ; pois , pode ter no meio de uma string
                firula(i);
-            }
          }
          fclose(file); //fecha o arquivo! ele fica salvo na mesma pasta desse executável no pc!
          printf("Arquivo gerado com sucesso!\n");
