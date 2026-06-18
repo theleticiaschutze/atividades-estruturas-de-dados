@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1781808315 source:c:\xampp\htdocs\atividades-estruturas-de-dados\lista - loop aninhado\menu-matriz\main.c
+	<stdio.h>
+	<stdlib.h>
+
