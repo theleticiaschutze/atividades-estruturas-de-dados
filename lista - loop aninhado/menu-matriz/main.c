@@ -108,7 +108,7 @@ int main()
    tAluno vAluno[MAX];
    char pesq[MAX];
    tAluno tmp;
-   char  nNome[50]="", nAlt[50]="", nSexo="";
+   char  nNome[50]="", nAlt[50]="", nSexo='\n';
    int maior, busc;
 
    qtd = lerArquivo(vAluno);
